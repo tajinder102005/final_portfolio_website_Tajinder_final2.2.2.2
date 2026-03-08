@@ -167,6 +167,7 @@ section {
     color: var(--main-color);
     border-color: var(--main-color);
 }
+
 .home {
     display: flex;
     justify-content: space-between;
@@ -206,20 +207,21 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 1s ease;
 }
 
 .home .profession-container .profession {
     position: absolute;
-        left: -15px;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        flex-direction: column;
-        color: var(--main-color);
-        transform: rotate(calc(360deg / 4 * var(--i)));
-        transform-origin: 384px;
-        background: var(--bg-color);
-        padding: 13px;
+    left: -15px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--main-color);
+    transform: rotate(calc(360deg / 4 * var(--i)));
+    transform-origin: 384px;
+    background: var(--bg-color);
+    padding: 13px;
 }
 
 .home .profession i {
@@ -311,7 +313,7 @@ span {
     right: 0;
     width: 50vw;
     height: 100%;
-    
+
     z-index: 0;
     pointer-events: none;
 }
@@ -346,4 +348,204 @@ span {
     border-bottom: 0.6rem solid var(--main-color);
     min-width: 250px;
     max-width: 350px;
+}
+
+/* Responsive Design */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+    margin-right: 2rem;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+
+    .home .profession-container {
+        height: 85.8rem;
+    }
+
+    .home .profession-container .profession-box {
+        right: -12rem;
+        height: 85.8rem;
+    }
+
+    .home .profession-container .overlay {
+        right: -9rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .home .profession-container .profession-box {
+        right: -22rem;
+    }
+
+    .home .profession-container .overlay {
+        right: -15rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .home .profession-container .profession-box {
+        right: -45rem;
+    }
+
+    .home .profession-container .overlay {
+        right: -39.5rem;
+    }
+
+    .home-img img {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+        color: var(--text-color);
+        cursor: pointer;
+    }
+
+    .header.sticky #menu-icon {
+        color: var(--text-color);
+    }
+
+    #darkMode-icon {
+        font-size: 2.6rem;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: var(--text-color);
+    }
+
+    .home {
+        padding: 0 3% 23rem;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content p {
+        text-align: center;
+    }
+
+    .home-content .social-media a {
+        margin: 2.5rem 1.5rem 3rem;
+    }
+
+    .home .profession-container {
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .home .profession-container .profession-box {
+        position: fixed;
+        top: 60%;
+        left: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .home .profession-box .circle {
+        width: 380px;
+        height: 380px;
+    }
+
+    .home .profession-container .overlay {
+        position: fixed;
+        top: 70px;
+        left: 50%;
+        right: 0;
+        transform: rotate(90deg) translate(-100%, 50%) scaleY(3);
+        border-width: 23.9rem;
+    }
+
+    .home .profession {
+        padding: 0;
+        background: transparent;
+        transform-origin: 250px;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-content h2 {
+        text-align: center;
+    }
+
+    .about-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .right-bg,
+    .right-cut {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    #darkMode-icon {
+        right: 6rem;
+    }
+
+    .home {
+        padding: 0 3% 30rem;
+    }
+
+    .home .profession-box .circle {
+        width: 290px;
+        height: 290px;
+    }
+
+    .home .profession-container .profession {
+        transform-origin: 200px;
+    }
+
+    .home .profession-container .overlay {
+        border-width: 20rem;
+    }
 }
