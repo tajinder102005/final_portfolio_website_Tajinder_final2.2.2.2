@@ -18,6 +18,7 @@ body {
   scroll-behavior: smooth;
   background-color: rgb(var(--color-background));
   color: rgb(var(--color-foreground));
+  overflow-x: hidden;
 }
 
 body {

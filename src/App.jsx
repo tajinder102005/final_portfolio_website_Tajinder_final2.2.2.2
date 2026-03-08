@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground font-body">
+    <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground font-body">
       <div className="pointer-events-none fixed inset-0 bg-noise-soft opacity-50 mix-blend-soft-light" />
       <div className="pointer-events-none fixed inset-0 bg-radial-primary opacity-70 blur-3xl" />
 
